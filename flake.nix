@@ -6,10 +6,10 @@
   };
   
   outputs = { self, nixpkgs, ...}@inputs:{
-    nixosConfigurations.nixos = nixpkgs.lib.nixosSystem{
+    nixosConfigurations.huaweid15 = nixpkgs.lib.nixosSystem{
       system = "x86_64-linux";
       modules = [
-        ./configuration.nix
+        ./hosts/huaweid15/configuration.nix
       ];
     };
   };
