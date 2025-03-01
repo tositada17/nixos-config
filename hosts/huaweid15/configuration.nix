@@ -10,6 +10,7 @@
       ./hardware-configuration.nix
       ../../config/nixos/desktop/kde.nix
       ../../config/nixos/desktop/sound.nix
+      ../../config/nixos/desktop/font.nix
     ];
   nix.settings.experimental-features = [ "nix-command" "flakes"];
 
