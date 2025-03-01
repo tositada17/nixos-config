@@ -8,6 +8,7 @@
   imports =
     [ # Include the results of the hardware scan.
       ./hardware-configuration.nix
+      ../../config/nixos/desktop/kde.nix
     ];
   nix.settings.experimental-features = [ "nix-command" "flakes"];
 
@@ -35,11 +36,6 @@
     # keyMap = "us";
     useXkbConfig = true; # use xkb.options in tty.
   };
-
-  # Enable the X11 windowing system.
-  services.xserver.enable = true;
-  services.displayManager.sddm.enable = true;
-  services.desktopManager.plasma6.enable = true;
 
   # Configure keymap in X11
   # services.xserver.xkb.layout = "us";
