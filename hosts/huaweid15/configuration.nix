@@ -9,6 +9,7 @@
     [ # Include the results of the hardware scan.
       ./hardware-configuration.nix
       ../../config/nixos/desktop/kde.nix
+      ../../config/nixos/desktop/sound.nix
     ];
   nix.settings.experimental-features = [ "nix-command" "flakes"];
 
@@ -47,11 +48,6 @@
   # Enable sound.
   # hardware.pulseaudio.enable = true;
   # OR
-  services.pipewire = {
-    enable = true;
-    pulse.enable = true;
-  };
-
   # Enable touchpad support (enabled default in most desktopManager).
   services.libinput.enable = true;
 
