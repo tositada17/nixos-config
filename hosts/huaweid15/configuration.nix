@@ -17,30 +17,45 @@
   # Use the systemd-boot EFI boot loader.
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
-
+  boot.loader.systemd-boot.configurationLimit = 5;
   networking.hostName = "huaweid15"; # Define your hostname.
   # Pick only one of the below networking options.
-  #networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
-  #networking.wireless.userControlled.enable = true; 
   networking.networkmanager.enable = true;  # Easiest to use and most distros use this by default.
 
   # Set your time zone.
-  # time.timeZone = "Europe/Amsterdam";
+  time.timeZone = "Asia/Tokyo";
 
-  # Configure network proxy if necessary
-  # networking.proxy.default = "http://user:password@proxy:port/";
-  # networking.proxy.noProxy = "127.0.0.1,localhost,internal.domain";
 
   # Select internationalisation properties.
   i18n.defaultLocale = "en_US.UTF-8";
+  i18n.supportedLocales = [
+    "ja_JP.UTF-8/UTF-8"
+  ];
+  i18n.inputMethod = {
+    type = "fcitx5";
+    enable = true;
+    fcitx5.plasma6Support = true;
+    fcitx5.addons = with pkgs;[
+      fcitx5-mozc
+      fcitx5-gtk
+    ];
+  };
+  # xkb variant rename
+  i18n.inputMethod.fcitx5.waylandFrontend=true;
+  # add /etc/x11/xkb
+  services.xserver.exportConfiguration = true;
+
   console = {
     font = "Lat2-Terminus16";
-    # keyMap = "us";
+    # keyMap = "jp106"; x11 keymaps enabled
     useXkbConfig = true; # use xkb.options in tty.
   };
 
   # Configure keymap in X11
-  # services.xserver.xkb.layout = "us";
+
+  services.xserver= {
+    xkb.layout = "jp";
+  };
   # services.xserver.xkb.options = "eurosign:e,caps:escape";
 
   # Enable CUPS to print documents.
