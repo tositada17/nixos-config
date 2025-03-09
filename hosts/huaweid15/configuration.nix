@@ -87,6 +87,7 @@
     wget
     pciutils
     firefox
+    discord
     iw
     wirelesstools
     iwd
