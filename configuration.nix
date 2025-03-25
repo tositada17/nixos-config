@@ -26,7 +26,7 @@
   # Network Settings
   networking.hostName = "nixos"; # Define your hostname.
   # Pick only one of the below networking options.
-  # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
+  networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
   networking.networkmanager.enable = true;  # Easiest to use and most distros use this by default.
 
   # Set your time zone.
@@ -86,6 +86,11 @@
     wget
     git
     gh
+    
+    # network
+    wirelesstools
+    iw
+    iwd
   ];
 
   # Some programs need SUID wrappers, can be configured further or are
