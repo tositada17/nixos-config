@@ -22,6 +22,9 @@
   # Pick only one of the below networking options.
   networking.networkmanager.enable = true;  # Easiest to use and most distros use this by default.
 
+  # Bluetooth Setting
+  hardware.bluetooth.enable = true;
+
   # Set your time zone.
   time.timeZone = "Asia/Tokyo";
 
