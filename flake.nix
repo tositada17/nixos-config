@@ -7,7 +7,7 @@
 
   outputs = { self, nixpkgs }@inputs:{
     nixosConfigurations = {
-      nixos = nixpkgs.lib.nixosSystem {
+      huaweid15kde = nixpkgs.lib.nixosSystem {
         modules = [./configuration.nix];
       };
     };
