@@ -54,6 +54,21 @@
   services.displayManager.sddm.wayland.enable = true;
   services.desktopManager.plasma6.enable = true;
 
+  # inputMethod
+  i18n.inputMethod = {
+    type = "fcitx5";
+    enable = true;
+    fcitx5.plasma6Support = true;
+    fcitx5.waylandFrontend = true;
+    fcitx5.addons = with pkgs;[
+      fcitx5-mozc
+      fcitx5-gtk
+    ];
+  };
+
+  # add /etc/x11/xkb
+  services.xserver.exportConfiguration = true;
+
   # Configure keymap in X11
   # services.xserver.xkb.layout = "us";
   # services.xserver.xkb.options = "eurosign:e,caps:escape";
