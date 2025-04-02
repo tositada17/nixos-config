@@ -1,6 +1,10 @@
 { config, lib, pkgs, ... }:
 
 {
+  imports =
+    [
+        ./font.nix
+    ];
   services.xserver.enable = true;
   services.displayManager.sddm.enable = true;
   services.displayManager.sddm.wayland.enable = true;
