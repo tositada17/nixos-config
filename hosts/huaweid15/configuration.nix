@@ -116,6 +116,9 @@
     gh
     git
     flameshot
+    spotify
+    discord
+    steam
   ];
 
   # Some programs need SUID wrappers, can be configured further or are
@@ -160,6 +163,6 @@
   #
   # For more information, see `man configuration.nix` or https://nixos.org/manual/nixos/stable/options#opt-system.stateVersion .
   system.stateVersion = "24.11"; # Did you read the comment?
-
+  nixpkgs.config.allowUnfree = true;
 }
 
